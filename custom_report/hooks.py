@@ -172,4 +172,10 @@ user_data_fields = [
 # auth_hooks = [
 # 	"custom_report.auth.validate"
 # ]
-
+fixtures = [{"dt": "Letter Head", "filters": [
+        [
+            "name", "in", [
+                "Luen  Hink Tyre Trading"
+            ]
+        ]
+    ]}]
