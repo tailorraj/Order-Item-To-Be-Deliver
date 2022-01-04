@@ -22,6 +22,7 @@ def get_data(filters):
 		`tabSales Order Item`.item_code as item,
 		`tabItem`.item_group as item_grp,
 		`tabSales Order Item`.qty as quantity,
+		`tabSales Order Item`.rate as rate,
 		`tabSales Order Item`.warehouse as warehouses,
 		`tabBin`.actual_qty as available_qty,
 		`tabBin`.projected_qty as projected_q,  
@@ -69,7 +70,7 @@ def get_columns(filters):
 			"label":_("Status"),
 			"fieldname": "status",
 			"fieldtype": "Data",
-			"width": 140
+			"width": 120
 		},
 		{
 			"label":_("Sales Order"),
@@ -102,6 +103,12 @@ def get_columns(filters):
 			"fieldname": "quantity",
 			"fieldtype": "float",
 			"width": 50
+		},
+		{
+			"label":_("Unit Price"),
+			"fieldname": "rate",
+			"fieldtype": "Currency",
+			"width": 100
 		},
 		{
 			"label":_("Warehouse"),
