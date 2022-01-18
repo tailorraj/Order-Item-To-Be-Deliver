@@ -27,6 +27,7 @@ def get_data(filters):
 		`tabBin`.actual_qty as available_qty,
 		`tabBin`.projected_qty as projected_q,  
 		`tabSales Order Item`.delivered_qty as delivered_q,
+		`tabSales Order Item`.qty - `tabSales Order Item`.delivered_qty as bal_q,
 		`tabSales Order`.`company` as companies
 		from
 		`tabSales Order` JOIN `tabSales Order Item` 
@@ -132,6 +133,12 @@ def get_columns(filters):
 		{
 			"label":_("Delivered Qty"),
 			"fieldname": "delivered_q",
+			"fieldtype": "Data",
+			"width": 100
+		},
+		{
+			"label":_("Bal Qty"),
+			"fieldname": "bal_q",
 			"fieldtype": "Data",
 			"width": 100
 		},
